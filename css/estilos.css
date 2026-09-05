@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -5,14 +6,42 @@
 }
 
 body {
-    background-color: #F4EBDD;
-    color: #000000; 
-    font-family: sans-serif;
+    background-color: #F4EBDD; /* Crema */
+    color: #000000;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+}
+header {
+    background-color: #6D1F2A; /* Bordó */
+    color: #F4EBDD;
+    padding: 25px 20px;
+    text-align: center;
 }
 
-header {
-    background-color: #6D1F2A;
-    color: #FFFFFF;
-    padding: 20px;
-    text-align: center;
+header h1 {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #D5A62E;
+}
+.album-semana {
+    margin-bottom: 50px;
+}
+
+.contenedor-album {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    background-color: #FFFFFF;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.portada img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 3px solid #6D1F2A;
 }
