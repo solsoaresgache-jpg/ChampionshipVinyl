@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Championship Vinyl - Home</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-
     <header>
         <h1>CHAMPIONSHIP VINYL</h1>
         <nav>
             <ul>
                 <li><a href="index.html">INICIO</a></li>
-                <li><a href="#">ALBUM</a></li>
-                <li><a href="#">TOP 5</a></li>
-                <li><a href="#">REVIEW</a></li>
+                <li><a href="#album">ALBUM</a></li>
+                <li><a href="#top5">TOP 5</a></li>
+                <li><a href="#reviews">REVIEW</a></li>
             </ul>
         </nav>
     </header>
     <main>
-
-        <section class="album-semana">
+        <section id="album" class="seccion-clara album-semana">
             <h2>ALBUM DE LA SEMANA</h2>
+
             <div class="contenedor-album">
-        
-              <div class="contenedor-album">
                 <div class="portada">
                     <img src="images/a-18-del-sol.jpg" alt="Portada A 18' Del Sol - Luis Alberto Spinetta">
                 </div>
@@ -35,45 +34,83 @@
                     <p class="descripcion">
                         Obra cumbre de la fusión argentina. Una joya poética y musical indispensable para cualquier coleccionista de vinilos.
                     </p>
-                    <a href="#" class="boton">VER ÁLBUM</a>
+                    <a href="#reviews" class="boton">VER REVIEWS DEL ÁLBUM</a>
                 </div>
             </div>
         </section>
 
-        <section class="top-five">
+        <section id="top5" class="seccion-oscura top-five">
             <h2>5 RECOMENDACIONES DE LA SEMANA</h2>
-            <ol>
+            <ol class="lista-desktop">
                 <li>Canción para los Días de la Vida - Luis Alberto Spinetta</li>
                 <li>Que Bueno Que Llegaste - Cami y Bronko Yotte</li>
                 <li>I Wanna Be Adored - Remastered 2009- The Stone Roses </li>
                 <li>lyin - Loyle Carner</li>
                 <li>Cassius 1999- Cassius</li>
             </ol>
-            <a href="#" class="boton">VER TOP 5</a>
-        </section>
-            <h2>ÚLTIMAS REVIEWS</h2>
+
+            <div class="carrusel-mobile">
+    <button class="btn-carrusel" onclick="anteriorCancion()">❮</button>
+    
+    <div class="tarjeta-carrusel">
+        <span id="numero-cancion">1 / 5</span>
+        <p id="texto-cancion">Canción para los Días de la Vida - Luis Alberto Spinetta</p>
+    </div>
+   <button class="btn-carrusel" onclick="siguienteCancion()">❯</button>
+</div>
+ </section>
+ <section id="reviews" class="seccion-clara reviews">
+      <h2>ÚLTIMAS REVIEWS</h2>
             
-            <div class="contenedor-reviews">
-                <article class="tarjeta-review">
-                    <h4>Nombre</h4>
-                    <p class="puntuacion">★★★★★</p>
-                    <p>"Review..."</p>
-                </article>
+         <div class="contenedor-reviews" id="grid-reviews">
+             <article class="tarjeta-review">
+                <h4>Martina</h4>
+                <p class="puntuacion">★★★★★</p>
+                <p class="album-review">Álbum de la semana (A 18' Del Sol)</p>
+                <p>"Una obra maestra absoluta de Spinetta. Suena increíble en vinilo."</p>
+            </article>
 
-                <article class="tarjeta-review">
-                    <h4>Nombre</h4>
-                    <p class="puntuacion">★★★★★</p>
-                    <p>"Review..."</p>
-                </article>
+            <article class="tarjeta-review">
+                 <h4>Juan</h4>
+                 <p class="puntuacion">★★★★☆</p>
+                 <p class="album-review">Ranking / Top 5 de la semana</p>
+                 <p>"Tremenda selección del Top 5 esta semana, pura calidad."</p>
+            </article>
 
-                <article class="tarjeta-review">
-                    <h4>Nombre</h4>
-                    <p class="puntuacion">★★★★★</p>
-                    <p>"Review..."</p>
-                </article>
+            <article class="tarjeta-review">
+                 <h4>Sofía</h4>
+                 <p class="puntuacion">★★★★★</p>
+                 <p class="album-review">Atención y experiencia general</p>
+                 <p>"Championship Vinyl es por lejos la mejor disquería de la ciudad."</p>
+            </article>
+        </div>
+
+      <div class="bloque-formulario">
+                <button id="btn-mostrar-form" class="boton" onclick="mostrarFormulario()">DEJA TU REVIEW</button>
+
+                <form id="form-review" class="formulario-oculto" onsubmit="agregarReview(event)">
+                    <h3>Escribí tu opinión</h3>
+                    
+                    <label for="select-tipo">¿Sobre qué querés opinar?:</label>
+                    <select id="select-tipo">
+                        <option value="Álbum de la semana (A 18' Del Sol)">Álbum de la semana (A 18' Del Sol)</option>
+                        <option value="Ranking / Top 5 de la semana">Ranking / Top 5 de la semana</option>
+                        <option value="Atención y experiencia general">Atención y experiencia general</option>
+                    </select>
+
+                    <input type="text" id="input-nombre" placeholder="Tu nombre" required>
+                    
+                    <select id="select-estrellas">
+                        <option value="★★★★★">★★★★★ (5 estrellas)</option>
+                        <option value="★★★★☆">★★★★☆ (4 estrellas)</option>
+                        <option value="★★★☆☆">★★★☆☆ (3 estrellas)</option>
+                    </select>
+
+                    <textarea id="input-comentario" placeholder="Escribí tu comentario aquí..." required></textarea>
+                    
+                    <button type="submit" class="boton">PUBLICAR REVIEW</button>
+                </form>
             </div>
-
-            <a href="#" class="boton">DEJA TU REVIEW</a>
         </section>
 
     </main>
@@ -81,5 +118,6 @@
         <p>CHAMPIONSHIP VINYL - MUSIC FOR PEOPLE</p>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>

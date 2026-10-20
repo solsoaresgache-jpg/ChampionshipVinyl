@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+html {
+    scroll-behavior: smooth;
+}
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +10,7 @@
 
 body {
     background-color: #F4EBDD; /* Crema */
-    color: #000000;
+    color: #111111;
     font-family: 'Plus Jakarta Sans', sans-serif;
     line-height: 1.6;
 }
@@ -23,25 +26,294 @@ header h1 {
     font-size: 2.2rem;
     letter-spacing: 2px;
     margin-bottom: 15px;
-    color: #D5A62E;
-}
-.album-semana {
-    margin-bottom: 50px;
+    color: #D5A62E; /* Mostaza */
 }
 
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    color: #F4EBDD;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #D5A62E;
+}
+.seccion-clara {
+    background-color: #F4EBDD; /* Crema */
+    color: #111111;
+    padding: 50px 20px;
+}
+
+.seccion-oscura {
+    background-color: #6D1F2A; /* Bordó - Corte visual */
+    color: #F4EBDD;
+    padding: 50px 20px;
+}
+
+.seccion-clara h2 {
+    font-family: 'Abril Fatface', serif;
+    font-size: 2rem;
+    color: #6D1F2A;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #D5A62E;
+    padding-bottom: 8px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.seccion-oscura h2 {
+    font-family: 'Abril Fatface', serif;
+    font-size: 2rem;
+    color: #D5A62E;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #F4EBDD;
+    padding-bottom: 8px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .contenedor-album {
+    max-width: 1000px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     gap: 35px;
     background-color: #FFFFFF;
-    padding: 25px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
+
 .portada img {
-    width: 260px;
-    height: 260px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     border-radius: 6px;
     border: 3px solid #6D1F2A;
+}
+
+.info-album {
+    flex: 1;
+}
+
+.info-album h3 {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 1.6rem;
+    color: #6D1F2A;
+}
+
+.info-album .artista {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.info-album .detalles {
+    font-family: 'Courier Prime', monospace;
+    color: #555555;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.puntuacion {
+    color: #D5A62E;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.info-album .descripcion {
+    margin-bottom: 20px;
+}
+.top-five ol.lista-desktop {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 30px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.1rem;
+}
+
+.top-five li {
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed rgba(244, 235, 221, 0.3);
+}
+
+.carrusel-mobile {
+    display: none;
+}
+.contenedor-reviews {
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    gap: 20px;
+}
+
+.tarjeta-review {
+    flex: 1;
+    background-color: #FFFFFF;
+    padding: 22px;
+    border-radius: 8px;
+    border-left: 5px solid #D5A62E;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.tarjeta-review h4 {
+    font-weight: 700;
+    color: #6D1F2A;
+}
+
+.tarjeta-review .album-review {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.85rem;
+    color: #666666;
+    margin-bottom: 8px;
+}
+
+.tarjeta-review p {
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.bloque-formulario {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.formulario-oculto {
+    display: none;
+    background-color: #FFFFFF;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.formulario-oculto h3 {
+    color: #6D1F2A;
+    margin-bottom: 15px;
+}
+
+.formulario-oculto label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formulario-oculto input, 
+.formulario-oculto select, 
+.formulario-oculto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.boton {
+    display: inline-block;
+    background-color: #6D1F2A;
+    color: #F4EBDD;
+    padding: 11px 22px;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.seccion-oscura .boton {
+    background-color: #D5A62E;
+    color: #111111;
+}
+
+.boton:hover {
+    background-color: #D5A62E;
+    color: #111111;
+}
+
+footer {
+    background-color: #6D1F2A;
+    color: #F4EBDD;
+    text-align: center;
+    padding: 25px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+@media screen and (max-width: 768px) {
+    .contenedor-album {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contenedor-reviews {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .top-five ol.lista-desktop {
+        display: none;
+    }
+
+    .carrusel-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .tarjeta-carrusel {
+        background-color: #FFFFFF;
+        color: #111111;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    #numero-cancion {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        color: #6D1F2A;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    #texto-cancion {
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    .btn-carrusel {
+        background-color: #D5A62E;
+        color: #111111;
+        border: none;
+        padding: 10px 14px;
+        font-size: 1.2rem;
+        border-radius: 50%;
+        cursor: pointer;
+    }
 }
