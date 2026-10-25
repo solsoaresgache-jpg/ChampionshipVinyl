@@ -31,7 +31,7 @@ function anteriorCancion() {
     if (indiceActual < 0) {
         indiceActual = canciones.length - 1; // Va al último
     }
-    actualizarCarrusel();
+actualizarCarrusel();
 }
 
 function mostrarFormulario() {
@@ -72,4 +72,94 @@ function agregarReview(event) {
 
     document.getElementById("form-review").reset();
     mostrarFormulario();
+}
+function enviarMensaje(event) {
+    event.preventDefault(); 
+
+    const aviso = document.getElementById("aviso-envio");
+    if (aviso) {
+        aviso.style.display = "block";
+    }
+    document.getElementById("form-contacto").reset();
+}
+let carrito = JSON.parse(localStorage.getItem("carrito_cv")) || [];
+
+// Se ejecuta apenas carga la página para mostrar los productos guardados
+document.addEventListener("DOMContentLoaded", () => {
+    actualizarCarritoHTML();
+});
+
+function alternarCarrito() {
+    const dropdown = document.getElementById("dropdown-carrito");
+    if (dropdown) {
+        dropdown.classList.toggle("abierto");
+    }
+}
+
+function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre: nombre, precio: precio });
+    localStorage.setItem("carrito_cv", JSON.stringify(carrito));
+    actualizarCarritoHTML();
+}
+
+// Función especial para cuando comprás desde index.html
+function agregarDesdeIndex(nombre, precio) {
+    agregarAlCarrito(nombre, precio);
+    if (confirm("¡A 18' Del Sol fue agregado al carrito! ¿Querés ir a la Tienda a ver tu pedido?")) {
+        window.location.href = "tienda.html";
+    }
+}
+
+function actualizarCarritoHTML() {
+    const listaCarrito = document.getElementById("lista-carrito");
+    const precioTotal = document.getElementById("precio-total");
+    const contador = document.getElementById("contador-carrito");
+
+    if (contador) {
+        contador.textContent = carrito.length;
+    }
+
+    if (!listaCarrito || !precioTotal) return;
+
+    listaCarrito.innerHTML = "";
+    let total = 0;
+
+    if (carrito.length === 0) {
+        listaCarrito.innerHTML = '<li class="carrito-vacio">El carrito está vacío.</li>';
+    } else {
+        carrito.forEach((item, index) => {
+            total += item.precio;
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <span>${item.nombre}</span>
+                <span class="precio-item">$${item.precio.toLocaleString("es-AR")}</span>
+                <button type="button" class="btn-borrar-item" onclick="eliminarDelCarrito(${index})">✕</button>
+            `;
+            listaCarrito.appendChild(li);
+        });
+    }
+
+    precioTotal.textContent = "$" + total.toLocaleString("es-AR");
+}
+
+function eliminarDelCarrito(indice) {
+    carrito.splice(indice, 1);
+    localStorage.setItem("carrito_cv", JSON.stringify(carrito));
+    actualizarCarritoHTML();
+}
+
+function vaciarCarrito() {
+    carrito = [];
+    localStorage.removeItem("carrito_cv");
+    actualizarCarritoHTML();
+}
+
+function finalizarCompra() {
+    if (carrito.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+    }
+    alert("¡Gracias por tu compra en Championship Vinyl! Te contactaremos para coordinar la entrega en San Telmo.");
+    vaciarCarrito();
+    alternarCarrito();
 }
