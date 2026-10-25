@@ -316,7 +316,7 @@ footer {
         padding: 10px !important;
     }
 
-    /* La imagen cuadrada, chica y sin desbordar */
+    
     .tarjeta-producto img {
         width: 100% !important;
         height: auto !important;
@@ -345,6 +345,14 @@ footer {
 
     nav a {
         font-size: 0.8rem !important;
+    }
+  #dropdown-carrito {
+        width: 88vw !important;
+        max-width: 320px !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        box-sizing: border-box !important;
     }
 }
 
