@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Championship Vinyl - Tienda</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO Y MENÚ -->
+    <header>
+        <div class="logo">
+            <h1>CHAMPIONSHIP VINYL</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">RECOMENDACIONES</a></li>
+                <li><a href="tienda.html" class="activo">TIENDA</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <!-- CARRITO DESPLEGABLE EN EL MENÚ -->
+              <li class="item-carrito">
+    <button type="button" id="btn-toggle-carrito" onclick="alternarCarrito()">🛒 (<span id="contador-carrito">0</span>)</button>
+    <div id="dropdown-carrito" class="dropdown-carrito">
+        <h4>TU SELECCIÓN</h4>
+        <ul id="lista-carrito" class="lista-carrito">
+            <li class="carrito-vacio">El carrito está vacío.</li>
+        </ul>
+        <div class="total-carrito">
+            Total: <strong id="precio-total">$0</strong>
+        </div>
+        <button class="boton boton-checkout" onclick="finalizarCompra()">FINALIZAR COMPRA</button>
+        <button type="button" class="boton-vaciar" onclick="vaciarCarrito()">Vaciar</button>
+    </div>
+</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-tienda">
+        <section class="seccion-catalogo">
+           <div class="encabezado-tienda">
+    <h2 class="titulo-tienda">BATEA DE VINILOS</h2>
+    <p class="bajada-tienda">¿Cuál querés sumar a tu colección?</p>
+</div>
+            <div class="grid-productos">
+
+                <!-- 1. Milo J -->
+                <article class="tarjeta-producto">
+                    <img src="images/milo-j.jpg" alt="Milo J">
+                    <div class="info-producto">
+                        <h3>La Vida Era Más Corta</h3>
+                        <p class="artista">Milo J (2025)</p>
+                        <p class="precio">$68.000</p>
+                    </div>
+                    <button class="boton boton-compra-tienda" onclick="agregarAlCarrito('La Vida Era Más Corta - Milo J', 68000)">AGREGAR AL CARRITO</button>
+                </article>
+
+                <!-- 2. Cat Stevens -->
+                <article class="tarjeta-producto">
+                    <img src="images/cat-stevens.jpg" alt="Cat Stevens">
+                    <div class="info-producto">
+                        <h3>Tea For The Tillerman</h3>
+                        <p class="artista">Yusuf / Cat Stevens (1970)</p>
+                        <p class="precio">$62.000</p>
+                    </div>
+                    <button class="boton boton-compra-tienda" onclick="agregarAlCarrito('Tea For The Tillerman - Cat Stevens', 62000)">AGREGAR AL CARRITO</button>
+                </article>
+
+                <!-- 3. Spinetta -->
+                <article class="tarjeta-producto">
+                    <img src="images/a-18-del-sol.jpg" alt="Spinetta">
+                    <div class="info-producto">
+                        <h3>A 18' Del Sol</h3>
+                        <p class="artista">Luis Alberto Spinetta (1977)</p>
+                        <p class="precio">$65.000</p>
+                    </div>
+                    <button class="boton boton-compra-tienda" onclick="agregarAlCarrito('A 18 Del Sol - Spinetta', 65000)">AGREGAR AL CARRITO</button>
+                </article>
+
+                <!-- 4. Mac Miller -->
+                <article class="tarjeta-producto">
+                    <img src="images/mac-miller.jpg" alt="Mac Miller">
+                    <div class="info-producto">
+                        <h3>Circles</h3>
+                        <p class="artista">Mac Miller (2020)</p>
+                        <p class="precio">$64.000</p>
+                    </div>
+                    <button class="boton boton-compra-tienda" onclick="agregarAlCarrito('Circles - Mac Miller', 64000)">AGREGAR AL CARRITO</button>
+                </article>
+
+                <!-- 5. Dillom -->
+                <article class="tarjeta-producto">
+                    <img src="images/dillom.jpg" alt="Dillom">
+                    <div class="info-producto">
+                        <h3>LA NUEVA VIOLENCIA</h3>
+                        <p class="artista">Dillom (2026)</p>
+                        <p class="precio">$70.000</p>
+                    </div>
+                    <button class="boton boton-compra-tienda" onclick="agregarAlCarrito('LA NUEVA VIOLENCIA - Dillom', 70000)">AGREGAR AL CARRITO</button>
+                </article>
+
+                <!-- 6. Silvana Estrada -->
+                <article class="tarjeta-producto">
+                    <img src="images/silvana-estrada.jpg" alt="Silvana Estrada">
+                    <div class="info-producto">
+                        <h3>Vendrán Suaves Lluvias</h3>
+                        <p class="artista">Silvana Estrada (2025)</p>
+                        <p class="precio">$60.000</p>
+                    </div>
+                    <button class="boton boton-compra-tienda" onclick="agregarAlCarrito('Vendrán Suaves Lluvias - Silvana Estrada', 60000)">AGREGAR AL CARRITO</button>
+                </article>
+
+                <!-- 7. berlioz -->
+                <article class="tarjeta-producto">
+                    <img src="images/berlioz.jpg" alt="berlioz">
+                    <div class="info-producto">
+                        <h3>open this wall</h3>
+                        <p class="artista">berlioz (2024)</p>
+                        <p class="precio">$58.000</p>
+                    </div>
+                    <button class="boton boton-compra-tienda" onclick="agregarAlCarrito('open this wall - berlioz', 58000)">AGREGAR AL CARRITO</button>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Championship Vinyl - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
