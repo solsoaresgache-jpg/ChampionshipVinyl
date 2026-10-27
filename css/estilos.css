@@ -345,6 +345,24 @@ footer {
     nav a {
         font-size: 0.8rem !important;
     }
+    .grilla-datos-contacto {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .titulo-contacto {
+        font-size: 1.45rem;
+        text-align: center;
+    }
+
+    .bajada-contacto {
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    .dato-card {
+        padding: 10px 12px;
+    }
   #dropdown-carrito {
         position: fixed !important;
         top: 130px !important;
@@ -436,9 +454,81 @@ footer {
     border: 1px solid #333;
 }
 
-.datos-lista p {
-    margin: 12px 0;
-    font-size: 1.05rem;
+/* --- Sección Encontranos en San Telmo --- */
+.titulo-contacto {
+    font-family: 'Abril Fatface', serif;
+    color: #6D1F2A;
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.bajada-contacto {
+    font-family: 'Courier Prime', monospace;
+    color: #555555;
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed rgba(109, 31, 42, 0.25);
+}
+
+.grilla-datos-contacto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.dato-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #FAF6EE;
+    border: 1px solid rgba(109, 31, 42, 0.15);
+    border-left: 4px solid #D5A62E;
+    border-radius: 6px;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.dato-card.dato-full {
+    grid-column: 1 / -1;
+    border-left-color: #6D1F2A;
+}
+
+.dato-card.dato-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(109, 31, 42, 0.1);
+    border-color: #6D1F2A;
+}
+
+.icono-dato {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.info-dato {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.etiqueta-dato {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #6D1F2A;
+    margin-bottom: 2px;
+}
+
+.info-dato p {
+    margin: 0;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.88rem;
+    color: #222222;
+    word-break: break-word;
 }
 
 .seccion-form-contacto .campo {
@@ -698,10 +788,72 @@ footer {
     margin-bottom: 10px;
 }
 
-.datos-lista p {
-    margin: 12px 0;
-    font-size: 1rem;
-    color: #333333;
+.titulo-contacto {
+    font-family: 'Abril Fatface', serif;
+    color: #6D1F2A;
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.bajada-contacto {
+    font-family: 'Courier Prime', monospace;
+    color: #555555;
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed rgba(109, 31, 42, 0.25);
+}
+
+.grilla-datos-contacto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.dato-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #FAF6EE;
+    border: 1px solid rgba(109, 31, 42, 0.15);
+    border-left: 4px solid #D5A62E;
+    border-radius: 6px;
+    padding: 12px 14px;
+    color: inherit;
+}
+
+.dato-card.dato-full {
+    grid-column: 1 / -1;
+    border-left-color: #6D1F2A;
+}
+
+.icono-dato {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.info-dato {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.etiqueta-dato {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #6D1F2A;
+    margin-bottom: 2px;
+}
+
+.info-dato p {
+    margin: 0;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.88rem;
+    color: #222222;
+    word-break: break-word;
 }
 
 .seccion-form-contacto .campo {
