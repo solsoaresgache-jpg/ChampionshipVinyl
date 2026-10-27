@@ -345,9 +345,28 @@ footer {
     nav a {
         font-size: 0.8rem !important;
     }
+   /* En celular: una sola columna completa y texto en una línea */
     .grilla-datos-contacto {
-        grid-template-columns: 1fr;
-        gap: 10px;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .dato-card {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+        padding: 12px 14px !important;
+    }
+
+    .info-dato {
+        text-align: left !important;
+    }
+
+    .info-dato p {
+        font-size: 0.85rem !important;
+        white-space: normal !important;
+        word-break: normal !important;
     }
 
     .titulo-contacto {
